@@ -14,9 +14,13 @@ export async function POST(request: Request) {
 
   if (user) {
     // Generate a JWT token
-    const token = jwt.sign({ userId: user.id, username: user.username }, "your-secret-key", {
-      expiresIn: "1h",
-    })
+    const token = jwt.sign(
+      { userId: user.id, username: user.username },
+      "9ca64dab6f1fe59e9e15c8d3a5ae443f3856e1ff13cd34855f7ced932e404451",
+      {
+        expiresIn: "1h",
+      }
+    );
 
     return NextResponse.json({ token })
   } else {
