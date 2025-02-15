@@ -9,7 +9,7 @@ export default function Dashboard() {
   const router = useRouter();
 
   const handleLogout = () => {
-    localStorage.removeItem("token"); 
+    document.cookie = "token=; max-age=0; path=/";
     router.push("/");
   };
 
